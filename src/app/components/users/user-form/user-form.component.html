@@ -1,7 +1,7 @@
 <div class="card w-100 my-5">
   <div class="card-body">
     <h1 class="card-title text-center">Form Users</h1>
-    <form action="">
+    <form [formGroup]="userForm">
       <div class="row">
         <div class="col-md-6">
           <div class="form-floating mb-3">
@@ -10,6 +10,7 @@
               class="form-control"
               id="name"
               placeholder="type your name"
+              formControlName="name"
             />
             <label for="floatingInput">Name</label>
           </div>
@@ -21,6 +22,7 @@
               class="form-control"
               id="lastname"
               placeholder="type your last name"
+              formControlName="lastname"
             />
             <label for="floatingInput">Last Name</label>
           </div>
@@ -34,6 +36,7 @@
               class="form-control"
               id="age"
               placeholder="type your age"
+              formControlName="age"
             />
             <label for="floatingInput">Age</label>
           </div>
@@ -45,6 +48,7 @@
               class="form-control"
               id="profession"
               placeholder="type your profession"
+              formControlName="profession"
             />
             <label for="floatingInput">Profession</label>
           </div>
@@ -52,10 +56,10 @@
       </div>
       <div class="row">
         <div class="form-group col-12 mt-4">
-          <button type="button" class="btn btn-outline-danger float-start">
+          <button type="button" class="btn btn-outline-danger float-start" [routerLink]="['/']">
             Cancel
           </button>
-          <button type="button" class="btn btn-outline-success float-end">
+          <button type="button" class="btn btn-outline-success float-end" (click)="actionButton()">
             Send
           </button>
         </div>
